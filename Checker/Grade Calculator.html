@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>
+    Input figures to determine how the Grade Calculator works
+</p>    
+
+ <div class="container">
+<div class="section">
+      <h2>Grade Calculator</h2>
+      <input type="number" id="scoreInput" placeholder="Enter score (0-100)" />
+      <button onclick="calculateGrade()">Calculate Grade</button>
+      <div class="result" id="gradeResult"></div>
+    </div>
+</div>
+
+<script>
+    function calculateGrade() {
+      const score = parseFloat(document.getElementById("scoreInput").value);
+      let grade = "F";
+      if (score >= 90) grade = "A";
+      else if (score >= 80) grade = "B";
+      else if (score >= 70) grade = "C";
+      else if (score >= 60) grade = "D";
+      document.getElementById("gradeResult").innerText = `Your grade is ${grade}.`;
+    }
+
+</script>
+</body>
+</html>
